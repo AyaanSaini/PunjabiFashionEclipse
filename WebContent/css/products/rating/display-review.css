@@ -1,0 +1,56 @@
+/* comment section*/
+.product-comment-section{
+    margin-top: 1.5cm;
+    margin-bottom: .5cm;
+    margin-left: 2cm;
+    margin-right: 2cm;
+}
+.comment-title{
+    font-size: 20px;
+    font-weight: bolder;
+}
+.comments{
+    height:5cm;
+    overflow-y: auto;
+}
+.comment{
+    padding:.2cm;
+    margin-top: .2cm;
+    display: block;
+    background-color: #F5EFEF;
+}
+.product-comment-section > li {
+    list-style-type: none;
+}
+.comment-username{
+    font-size: 14px;
+    font-weight: bold;
+}
+.product-star{
+    color: yellow;
+    font-size: 15px;
+}
+.comment-comment{
+    font-size: 12px;
+}
+
+::-webkit-scrollbar {
+    width: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: rgb(241, 239, 239);
+    border: 5px solid transparent;
+    background-clip: content-box;   /* THIS IS IMPORTANT */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(1, 39, 97);
+    
+}
+.display-comments{
+    margin-top: 10px;
+    width: 50%;
+}

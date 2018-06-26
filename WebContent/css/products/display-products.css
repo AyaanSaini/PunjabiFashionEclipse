@@ -1,0 +1,53 @@
+.products-view-product{
+    border: 1px grey solid;
+    padding: .1cm;
+    margin-top:.3cm;
+    margin-bottom:.3cm;
+    display: block;
+}
+.products-view-product-center{
+    margin-left: auto;
+    margin-right: auto;
+}
+.products-view-product-image{
+    width: 100%; 
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    text-align: center;
+}
+.products-view-product-title{
+    text-align: center;
+}
+.product-title{
+    font-size: 15px;
+    font-weight: bold;
+}
+.product-price{
+    font-size: 15px;
+}
+.product-mrp{
+    font-size: 15px;
+}
+.product-discount{
+    color: red;
+    font-size: 10px;
+}
+.product-rating{
+    font-size: 15px;
+}
+.product-star{
+    color: yellow;
+    font-size: 15px;
+}
+.product-review{
+    font-size: 15px;
+}
+.product-performance{
+    float:right;
+}
+
+.products-display{
+	margin-top: 1cm;
+	padding: .5cm;
+}

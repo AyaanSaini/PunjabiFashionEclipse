@@ -1,0 +1,43 @@
+.product-filter{
+	margin-top: 2cm;
+	padding: .3cm;
+}
+.filter-check{
+    margin-right: 5px;
+}
+.product-filter-type{
+    height: 4cm;    
+}
+.product-filter-type > ul {
+    list-style-type: none;
+}
+.product-filter-type-filter{
+    margin-right: 5mm;
+    height: 3.3cm;
+    overflow-y: auto;    
+}
+.product-filter-type-filter > ul {
+    list-style-type: none;
+}
+
+.product-filter-type-filter > ul > li {
+    text-decoration: none;
+ 
+}
+div::-webkit-scrollbar {
+	    width: 3px;
+	}
+	
+	
+	/* Track */
+div::-webkit-scrollbar-track {
+	    background: rgb(241, 239, 239);
+	    border: 5px solid transparent;
+	    background-clip: content-box;   /* THIS IS IMPORTANT */
+	}
+	
+	/* Handle */
+div::-webkit-scrollbar-thumb {
+	    background: rgb(1, 39, 97);
+	    
+	}

@@ -1,0 +1,90 @@
+.myCarousel{
+    padding: 0px;
+}
+.carousel-control{
+    background-color: transparent;
+}
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+      width: 80%;
+      height:530px;
+      margin: auto;
+}
+
+.desc{
+    margin-top: 1cm;
+    
+}
+.dress-desc{
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:1mm;
+}
+.dress-desc > .men{
+    background-color: #fc9677;
+}
+.dress-desc > .women{
+    background-color: #fcad95;
+}
+.dress-desc > .kids{
+    background-color: #facfc2;
+}
+.dress-desc > .men > .row > .col-md-8 {
+    padding: .8cm;
+}
+.dress-desc > .women > .row > .col-md-8 {
+    padding: .8cm;
+}
+.dress-desc > .kids > .row > .col-md-8 {
+    padding: .8cm;
+}
+.dress-desc > .men > .row > .col-md-8 > .header{
+    color:#0b0035;
+    font-size: 25px;
+    font-weight: bold;
+    
+}
+
+.dress-desc > .men > .row > .col-md-8 > .description > p{
+    color:#004b0c;
+    font-size: 18px;
+    padding: 1cm;
+}
+
+.dress-desc > .women > .row > .col-md-8 > .header{
+    color:#0b0035;
+    font-size: 25px;
+    font-weight: bold;
+    
+}
+
+.dress-desc > .women > .row > .col-md-8 > .description{
+    color:#004b0c;
+    font-size: 18px;
+    padding: 1cm;
+}
+
+.dress-desc > .kids > .row > .col-md-8 > .header{
+    color:#0b0035;
+    font-size: 25px;
+    font-weight: bold;
+    
+}
+
+.dress-desc > .kids > .row > .col-md-8 > .description > p{
+    color:#004b0c;
+    font-size: 18px;
+    padding: 1cm;
+}
+.dress-desc > .kids > .row > .col-md-8 {
+    margin: auto;
+}
+.desc-image{
+    width: 10.5cm;
+    height: 12cm;
+    padding:.3cm    
+}
+.desc-image > img{
+    margin: auto;
+}

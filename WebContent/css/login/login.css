@@ -1,0 +1,56 @@
+.container{
+	width:100%;
+	margin-top: 2.5cm;
+}
+.login-container{
+    width:35%;
+    border:1px solid black;
+    margin: auto;
+    box-shadow: 10px 10px 5px #aec8f2;
+    padding: 15px;
+    border: .2px solid #5694f7;
+}
+.header{
+    margin: auto;
+}
+.header-name{
+    text-align: center;
+    font-size: .8cm;
+    color: blue;
+}
+.header-action{
+    text-align: center;
+    font-size: .6cm;
+}
+.form-group{
+    margin-top: 10px;
+    width: 98%;
+}
+.form-display{
+    margin-left: auto;
+    margin-right: auto;
+}
+.btn{
+    width: 100%;
+}
+.google-button{
+    width: 100%;
+    margin-top: .5cm;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
+}
+.btn-gplus{
+    background: #d34836;color: white ;
+    width: 50%;
+}
+
+.link-right{
+    text-align: right;
+    margin-top:.3cm; 
+}
+.link-left{
+    text-align: left;
+    margin-top:.3cm; 
+}

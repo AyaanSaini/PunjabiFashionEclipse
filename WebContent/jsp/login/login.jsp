@@ -32,16 +32,29 @@
         <div class='form-group'>
             <input type="password" class="form-control" id="password" placeholder="Enter password" name="pwd" required>
         </div>
-        <div class='form-display'>
-            <button type="submit" class="btn btn-primary" >Sign In</button>
+        <div class="row">
+        	<div class="col-md-6">
+        		<div class='form-display'>
+            		<button type="submit" class="btn btn-primary" >Sign In</button>
+        		</div>
+        	</div>
+        	<div class="col-md-6">
+        		<div class='form-display'>
+            		<button type="Reset" class="btn btn-primary" >Cancel</button>
+        		</div>
+        	</div>
         </div>
+        
         
       </form>
       <div class='row '>
-          <div class='col-md-6 link-left'>
+          <div class='col-md-4 link-left'>
               <a href='forget_password.jsp'>Forget Password?</a>
           </div>
-          <div class='col-md-6 link-right'>
+          <div class='col-md-4 link-center'>
+              <a href='/Git_Punjabi_Fashion/index.jsp'><span class="glyphicon glyphicon-arrow-left"> Back</span></a>
+          </div>
+          <div class='col-md-4 link-right'>
               <a href='signup.jsp'>Create an account</a>
           </div>
       </div>

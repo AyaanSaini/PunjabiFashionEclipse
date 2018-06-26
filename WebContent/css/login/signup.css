@@ -34,3 +34,11 @@
 .error{
     color: red;
 }
+.close{
+	color: red;
+	text-align: right;
+	width: 100%;
+}
+.close > span{
+	color:#ff0000;
+}

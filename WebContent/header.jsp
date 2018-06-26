@@ -6,7 +6,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>                        
         </button>
-        <a class="navbar-brand" href="/Punjabi_Fashion/index.jsp"><span class="navbar-brand">Punjabi Fashion</span>
+        <a class="navbar-brand" href="/Git_Punjabi_Fashion/index.jsp"><span class="navbar-brand">Punjabi Fashion</span>
           <!-- <img src="" class="logo" alt='image'> -->
         </a>          
       </div>
@@ -50,7 +50,7 @@
           </li> 
 
           <li class='dropdown'>
-                <a href="/Punjabi_Fashion/jsp/products/main.jsp">All</a>
+                <a href="/Git_Punjabi_Fashion/jsp/products/main.jsp">All</a>
         </li> 
 
         </ul>
@@ -62,11 +62,11 @@
             <%
             	if(session.getAttribute("session_user") == null ||session.getAttribute("session_user").equals("") ){
             %>
-            <li><a href="jsp/login/login.jsp"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            <li><a href="/Git_Punjabi_Fashion/jsp/login/login.jsp"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
             <%
             	}else{
             %>
-            <li><a href="jsp/login/logout.jsp"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+            <li><a href="/Git_Punjabi_Fashion/jsp/login/logout.jsp"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
             <%} %>
         </ul>
       </div>         

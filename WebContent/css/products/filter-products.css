@@ -1,6 +1,7 @@
 .product-filter{
-	margin-top: 2cm;
+	margin-top: 1cm;
 	padding: .3cm;
+	border-right: 1px solid lightgrey;
 }
 .filter-check{
     margin-right: 5px;

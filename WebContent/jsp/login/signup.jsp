@@ -13,6 +13,7 @@
 <body>
 <div class='container'>
 <div class='signup-container'>
+<div class="close"><a href="Git_punjabi_Fashion/index.jsp"><span class="glyphicon glyphicon-remove-sign"></span></a></div>
 
   <div class='header'>
     <div class='header-name'>Punjabi Fashion</div>
@@ -73,7 +74,14 @@
     </div>
     <div class='error'>${error}</div>
     <div class='form-display'>
-        <button type="submit" class="btn btn-primary"  >Signup</button>
+    	<div class="row">
+    		<div class="col-md-6">
+    			<button type="submit" class="btn btn-primary"  >Signup</button>
+    		</div>
+    		<div class="col-md-6">
+    			<button type="reset" class="btn btn-primary" >Cancel</button>
+    		</div>
+    	</div>
     </div>
     
   </form>

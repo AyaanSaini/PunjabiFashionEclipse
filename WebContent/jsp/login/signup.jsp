@@ -13,7 +13,7 @@
 <body>
 <div class='container'>
 <div class='signup-container'>
-<div class="close"><a href="Git_punjabi_Fashion/index.jsp"><span class="glyphicon glyphicon-remove-sign"></span></a></div>
+<div class="close"><a href="/Git_punjabi_Fashion/index.jsp"><span class="glyphicon glyphicon-remove-sign"></span></a></div>
 
   <div class='header'>
     <div class='header-name'>Punjabi Fashion</div>

@@ -1,7 +1,5 @@
 package com.punjabifashion.validators;
 
-import java.util.regex.Pattern;
-
 import com.punjabifashion.beans.User;
 
 public class UserValidation {

@@ -28,7 +28,7 @@ public class SignupController extends HttpServlet {
 		    	  user.setAnswer1(request.getParameter("ans1"));
 		    	  user.setAnswer2(request.getParameter("ans2"));
 		    	  
-		    	  userValidation
+		    	  
 		      }
 		      
 	}

@@ -3,7 +3,7 @@ package com.punjabifashion.beans;
 public class Review {
 	
 	private int rating;
-	private int comment;
+	private String comment;
 	private User user;
 	private Product product;
 	
@@ -13,10 +13,10 @@ public class Review {
 	public void setRating(int rating) {
 		this.rating = rating;
 	}
-	public int getComment() {
+	public String getComment() {
 		return comment;
 	}
-	public void setComment(int comment) {
+	public void setComment(String comment) {
 		this.comment = comment;
 	}
 	public User getUser() {

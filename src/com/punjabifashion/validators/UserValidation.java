@@ -10,13 +10,13 @@ public class UserValidation {
 	Pattern passwordPattern = Pattern.compile(passwordRegex);*/
 	public boolean validateUser(User user){
 		if(
-				(user.getUsername().equals("")||user.getUsername() == null)||
-				(user.getEmail().equals("")||user.getEmail() == null)||
-				(user.getPassword().equals("")||user.getPassword() == null)||
-				(user.getQuestion1().equals("")||user.getQuestion1() == null)||
-				(user.getQuestion2().equals("")||user.getQuestion2() == null)||
-				(user.getAnswer1().equals("")||user.getAnswer1() == null)||
-				(user.getAnswer2().equals("")||user.getAnswer2() == null)
+				user.getUsername().equals("")||
+				user.getEmail().equals("")||
+				user.getPassword().equals("")||
+				user.getQuestion1().equals("")||
+				user.getQuestion2().equals("")||
+				user.getAnswer1().equals("")||
+				user.getAnswer2().equals("")
 		){
 			isValid = false;
 		}

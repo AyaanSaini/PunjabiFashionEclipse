@@ -21,7 +21,7 @@
   </div>
   <hr>
   
-  <form action="login/signup.class" method="post">
+  <form action="${pageContext.request.contextPath}/Signup" method="post">
     <div class='note'>**All the fields are mendatory**</div>
     <div class='form-group'>
         <input type="email" class="form-control" id='email' placeholder="Enter email"  name="email" required>
@@ -72,7 +72,8 @@
     <div class='form-group'>
       <input type='text' class='form-control' id='ans2' placeholder="Enter answer" name='ans2' required>
     </div>
-    <div class='error'>${error}</div>
+    <div class='message'>${param.message}</div>
+    <div class='error'>${param.error}</div>
     <div class='form-display'>
     	<div class="row">
     		<div class="col-md-6">

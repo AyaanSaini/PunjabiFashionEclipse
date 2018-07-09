@@ -16,8 +16,13 @@ public class UserServiceImpl implements UserService{
 
 	@Override
 	public int addUser(User user) {
-		// TODO Auto-generated method stub
-		return 0;
+		int resCode = 0;
+		try{
+			resCode = userDAO.addUser(user);
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return resCode;
 	}
 
 	@Override

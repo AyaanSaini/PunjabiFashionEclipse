@@ -8,11 +8,12 @@
 </head>
 <body>
 <%
-	String user = session.getAttribute("session_user").toString();
-	if(user.equals("")||user == null){
+	String username = session.getAttribute("session_user").toString();
+	if(username.equals("")||username == null){
 		response.sendRedirect("login.jsp");
 	}
 	else{
+		session.setAttribute("session_user",null);
 		response.sendRedirect("../../index.jsp");
 	}
 %>

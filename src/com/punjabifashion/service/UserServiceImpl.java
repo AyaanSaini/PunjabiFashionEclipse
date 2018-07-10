@@ -8,7 +8,7 @@ import com.punjabifashion.dao.UserDAOImpl;
 public class UserServiceImpl implements UserService{
 	UserDAO userDAO = new UserDAOImpl();
 	@Override
-	public boolean isValidUser(String username, String password) {
+	public String isValidUser(String username, String password) {
 		
 		return userDAO.isValidUser(username,password);
 

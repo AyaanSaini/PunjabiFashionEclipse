@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+ <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -11,7 +11,10 @@
  <link rel="stylesheet" href="../../css/login/login.css">
 </head>
 <body>
-	
+	<%
+		if(session.getAttribute("session_user") == null || session.getAttribute("session_user").equals("")){
+		
+	%>
 	<div class='container'>
     <div class='login-container'>
     
@@ -24,7 +27,7 @@
       </div>
       <hr>
       
-      <form>
+      <form action="${pageContext.request.contextPath}/Login" method="post">
         
         <div class='form-group'>
           <input type='text' class='form-control' id='username' placeholder="Enter username" name='username' required>
@@ -32,6 +35,8 @@
         <div class='form-group'>
             <input type="password" class="form-control" id="password" placeholder="Enter password" name="pwd" required>
         </div>
+        <div class='message'>${param.message}</div>
+    	<div class='error'>${param.error}</div>
         <div class="row">
         	<div class="col-md-6">
         		<div class='form-display'>
@@ -62,6 +67,9 @@
     </div>
     
     </div>
+    <%}else{
+    	response.sendRedirect("/Git_Punjabi_Fashion/index.jsp");	
+    }%>
     
 </body>
 </html>

@@ -41,29 +41,32 @@ public class SignupController extends HttpServlet {
 		    	  user.setAnswer2(request.getParameter("ans2"));
 		 		    	  
 		    	  userValidation = new UserValidation();
-		    	  boolean isValidUser = userValidation.validateUser(user);
+		    	  String isValidUser = userValidation.validateUser(user);
 		    	  System.out.println("Is valid user : "+isValidUser);
-		    	  if(isValidUser){
+		    	  if(isValidUser.equals("user is fine")){
 		    		  userService = new UserServiceImpl();
 		    		  resCode = userService.addUser(user);
+		    		  
+		    		  if(resCode==1){
+			    		  message = "User Added Successfully";
+			    		  response.sendRedirect("/Git_Punjabi_Fashion/jsp/login/signup.jsp?message=" + URLEncoder.encode(message, "UTF-8"));
+			    	  }
+			    	  else if(resCode == 2){
+			    		  message = "User already exist";
+			    		  response.sendRedirect("/Git_Punjabi_Fashion/jsp/login/signup.jsp?error=" + URLEncoder.encode(message, "UTF-8"));
+			    	  }
+			    	  else{
+			    		  message = "Database error : Contact System Administrator";
+			    		  response.sendRedirect("/Git_Punjabi_Fashion/jsp/login/signup.jsp?error=" + URLEncoder.encode(message, "UTF-8"));
+			    	  }
+			    	  
 		    	  }
 		    	  else{
-		    		  error = "Please provide all details carefully";
+		    		  message = isValidUser;
+		    		  response.sendRedirect("/Git_Punjabi_Fashion/jsp/login/signup.jsp?error=" + URLEncoder.encode(message, "UTF-8"));
 		    	  }
 		    	  
-		    	  if(resCode==1){
-		    		  message = "User Added Successfully";
-		    		  response.sendRedirect("signup.jsp?message=" + URLEncoder.encode(message, "UTF-8"));
-		    	  }
-		    	  else if(resCode == 2){
-		    		  error = "User already exist";
-		    		  response.sendRedirect("signup.jsp?error=" + URLEncoder.encode(message, "UTF-8"));
-		    	  }
-		    	  else{
-		    		  error = "Database error : Contact System Administrator";
-		    		  response.sendRedirect("signup.jsp?error=" + URLEncoder.encode(message, "UTF-8"));
-		    	  }
-		    	  
+		    	 
 		      }
 		      
 	}

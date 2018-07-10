@@ -13,16 +13,32 @@ public class UserDAOImpl implements UserDAO {
 	Connection con =  DBUtil.getConnection();
 	
 	@Override
-	public boolean isValidUser(String username, String password) {
+	public String isValidUser(String username, String password) {
 		// TODO Auto-generated method stub
-		return false;
+		String role = "noUser";
+		try{
+			String query = "select * from user_table where username = ? AND password = ?";
+			PreparedStatement ps = con.prepareStatement(query);
+			ps.setString(1, username);
+			ps.setString(2, password);
+			ResultSet rs = ps.executeQuery();
+			if(rs.next()){
+				role = rs.getString("user_type");
+			}
+		}
+		catch(SQLException se){
+			System.out.println(se.getMessage());			
+		}catch(Exception e){
+			System.out.println(e.getMessage());			
+		}
+		return role;
 	}
 
 	@Override
 	public int addUser(User user){
 		int resCode = 0;
 		try{
-			String query = "insert into user_table(username,email,password,question1,answer1,question2,answer2) values(???????)";
+			String query = "insert into user_table(username,email,password,question1,answer1,question2,answer2) values(?,?,?,?,?,?,?)";
 			PreparedStatement ps = con.prepareStatement(query);
 				ps.setString(1, user.getUsername());
 				ps.setString(2, user.getEmail());
@@ -31,7 +47,7 @@ public class UserDAOImpl implements UserDAO {
 				ps.setString(5,user.getAnswer1());
 				ps.setString(6, user.getQuestion2());
 				ps.setString(7, user.getAnswer2());
-			ResultSet rs = ps.executeQuery();
+			int rs = ps.executeUpdate();
 				resCode = 1;
 				System.out.println(rs);
 			

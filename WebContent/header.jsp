@@ -57,7 +57,16 @@
 
         <ul class="nav navbar-nav navbar-right">
             
-            <li Style="width:200px;text-align: right; margin-top: .4cm; color:white;padding-right:10px; "><span class="glyphicon glyphicon-user" ></span> Username</li>
+            <li Style="width:200px;text-align: right; margin-top: .4cm; color:white;padding-right:10px; "><span class="glyphicon glyphicon-user" ></span>
+             <% String user;           	
+            	if(session.getAttribute("session_user") == null ||session.getAttribute("session_user").equals("") ){
+            		user = "Guest";
+            	}else{
+            		user = session.getAttribute("session_user").toString();
+            	}
+            %>
+            <%=user %>
+            </li>
             
             <%
             	if(session.getAttribute("session_user") == null ||session.getAttribute("session_user").equals("") ){

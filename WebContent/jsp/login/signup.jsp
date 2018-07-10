@@ -86,7 +86,9 @@
     </div>
     
   </form>
-
+	<div class="link-center">
+		<a href='/Git_Punjabi_Fashion/jsp/login/login.jsp'><span class="glyphicon glyphicon-arrow-left"> Back to login</span></a>
+	</div>
 </div>
 
 </div>

@@ -1,1 +1,29 @@
 @CHARSET "ISO-8859-1";
+.delete-product{
+	width: 30cm;
+	background-color: white;
+	border-radius:25px 25px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: .3cm;
+}
+.product-delete-header{
+    margin: auto;
+}
+.product-delete-header > .header-name{
+    text-align: center;
+    font-size: .8cm;
+    color: blue;
+}
+.product-delete-header > .header-action{
+    text-align: center;
+    font-size: .6cm;
+}
+.form-group{
+    margin-top: 10px;
+    width: 98%;
+}
+.form-display{
+    margin-left: auto;
+    margin-right: auto;
+}

@@ -10,8 +10,20 @@
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
  <link rel="stylesheet" href="index.css">
  <link rel="stylesheet" href="../../css/admin/home.css">
+ <link rel="stylesheet" href="../../css/admin/addproduct.css">
+ <link rel="stylesheet" href="../../css/admin/editproduct.css">
+ <link rel="stylesheet" href="../../css/admin/deleteproduct.css">
+ <script type="text/javascript">
+ $(document).on('click', '.browse', function(){
+	  var file = $(this).parent().parent().parent().find('.file');
+	  file.trigger('click');
+	});
+	$(document).on('change', '.file', function(){
+	  $(this).parent().find('.form-control').val($(this).val().replace(/C:\\fakepath\\/i, ''));
+	});
+ </script>
 </head>
-<body>
+<body >
 <%@ include  file='/header.jsp' %>
 
 	<div class="container">		
@@ -24,15 +36,19 @@
 		
 		<div class="action-block">
 			<div class="action-container">
-				<div class="action-display" id="addproduct" style="visibility: visible;">
+			<%if(false){ %>
+				<div class="action-display" id="addproduct">
 					<%@ include file='./addproduct.jsp' %>
 				</div>
+			<%}else if(false){ %>
 				<div class="action-display" id="editproduct">
 					<%@ include file='./editproductdetails.jsp' %>	
 				</div>
-				<div class="action-display" id="deleteproduct" >
+			<%}else if(true){ %>
+				<div class="action-display" id="deleteproduct">
 					<%@ include file='./deleteproduct.jsp' %>
-				</div>		
+				</div>
+			<%} %>		
 			</div>
 		</div>
 		

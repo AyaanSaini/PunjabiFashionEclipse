@@ -1,1 +1,36 @@
 @CHARSET "ISO-8859-1";
+.edit-product{
+	width: 30cm;
+	background-color: white;
+	border-radius:25px 25px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: .3cm;
+}
+
+.product-edit-header{
+    margin: auto;
+}
+.product-edit-header > .header-name{
+    text-align: center;
+    font-size: .8cm;
+    color: blue;
+}
+.product-edit-header > .header-action{
+    text-align: center;
+    font-size: .6cm;
+}
+.form-group{
+    margin-top: 10px;
+    width: 98%;
+}
+.form-display{
+    margin-left: auto;
+    margin-right: auto;
+}
+.table-header{
+	text-align: center;
+	font-weight: bold;
+	font-size: 18px;
+	margin-top: 1cm;
+}

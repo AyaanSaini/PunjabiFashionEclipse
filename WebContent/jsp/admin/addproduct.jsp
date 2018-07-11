@@ -5,22 +5,22 @@
         <div class='header-action'>Product Entry</div>
     </div>
     <hr>
-      <form>
+      <form action="${pageContext.request.contextPath}/AddProduct" method="post" enctype="multipart/form-data">
       	<div class="form-group">   
 		      <div class="row">
 		      		<div class="col-md-4 check-gender">     
 				      	<div class="checkbox">
-					      <label><input type="checkbox" checked value="male">Male</label>
+					      <label><input type="checkbox" name="gender" value="male">Male</label>
 					    </div>
 				   	</div>
 				   <div class="col-md-4">
 					    <div class="checkbox">
-					      <label><input type="checkbox" value="female">Female</label>
+					      <label><input type="checkbox" name="gender" value="female">Female</label>
 					    </div>
 				    </div>
 				    <div class="col-md-4">
 					    <div class="checkbox">
-					      <label><input type="checkbox" value="kids" >Kids</label>
+					      <label><input type="checkbox" name="gender" value="kids" >Kids</label>
 					    </div>
 				    </div>
 			    </div>
@@ -93,10 +93,10 @@
         </div>
         
         <div class='form-group'>
-        	<input class="form-control" name="productName" type="text" placeholder="Enter Product Name">
+        	<input class="form-control" name="name" type="text" placeholder="Enter Product Name">
         </div>
         <div class='form-group'>
-        	<textarea class="form-control" name="productDescription" placeholder=" Enter Product Description" row="4" column="250"></textarea>
+        	<textarea class="form-control" name="description" placeholder=" Enter Product Description" row="4" column="250"></textarea>
         </div>
         <div class='form-group'>
         	<input class="form-control" name="price" type="text" placeholder="Enter MRP">
@@ -114,6 +114,7 @@
 		      </span>
 		    </div>
 		  </div>
+		  <div class="form-group"><label>Maximum file size should be 10MB*</label></div>
         <div class='form-group'>
         	<div class="row">
         		<div class="col-md-3"></div>

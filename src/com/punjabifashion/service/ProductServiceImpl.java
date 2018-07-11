@@ -3,13 +3,24 @@ package com.punjabifashion.service;
 import java.util.List;
 
 import com.punjabifashion.beans.Product;
+import com.punjabifashion.dao.ProductDAO;
+import com.punjabifashion.dao.ProductDAOImpl;
 
 public class ProductServiceImpl implements ProductService{
 
 	@Override
 	public int addProduct(Product product) {
 		// TODO Auto-generated method stub
-		return 0;
+		int res = 0;
+		ProductDAO  productDao;
+		if(product !=null){
+			productDao= new ProductDAOImpl();
+			res = productDao.addProduct(product);
+		}
+		else{
+			res = 100;
+		}
+		return res;
 	}
 
 	@Override

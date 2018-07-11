@@ -1,8 +1,12 @@
 package com.punjabifashion.beans;
 
+import java.io.InputStream;
+
 public class Product {
 	private int id;
 	private String code;
+	private String category;
+	private String subCategory;
 	private String name;
 	private String description;
 	private String mrp;
@@ -13,6 +17,7 @@ public class Product {
 	private String[] colors;
 	private String[] genders;
 	private boolean stiched;
+	private InputStream photo;
 	public int getId() {
 		return id;
 	}
@@ -24,6 +29,18 @@ public class Product {
 	}
 	public void setCode(String code) {
 		this.code = code;
+	}
+	public String getCategory() {
+		return category;
+	}
+	public void setCategory(String category) {
+		this.category = category;
+	}
+	public String getSubCategory() {
+		return subCategory;
+	}
+	public void setSubCategory(String subCategory) {
+		this.subCategory = subCategory;
 	}
 	public String getName() {
 		return name;
@@ -84,6 +101,12 @@ public class Product {
 	}
 	public void setStiched(boolean stiched) {
 		this.stiched = stiched;
+	}
+	public InputStream getPhoto() {
+		return photo;
+	}
+	public void setPhoto(InputStream photo) {
+		this.photo = photo;
 	}
 	
 	

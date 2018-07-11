@@ -57,16 +57,33 @@
 
         <ul class="nav navbar-nav navbar-right">
             
-            <li Style="width:200px;text-align: right; margin-top: .4cm; color:white;padding-right:10px; "><span class="glyphicon glyphicon-user" ></span>
-             <% String user;           	
-            	if(session.getAttribute("session_user") == null ||session.getAttribute("session_user").equals("") ){
+            
+             <% String user, userRole;           	
+            	if(session.getAttribute("session_user") == null ||session.getAttribute("session_user").equals("")||session.getAttribute("session_user_role")==null ){
             		user = "Guest";
-            	}else{
+            		userRole="Guest";
+            	}else{            		
             		user = session.getAttribute("session_user").toString();
+            		userRole=session.getAttribute("session_user_role").toString();
+            	}
+            	if(user.equals("Guest")){
+            		%>
+            		<li><a href="javascript:void(0)"><span class="glyphicon glyphicon-user" ></span>&nbsp;<%= user %></a></li>
+            		<%
+            	}
+            	else if(userRole.equalsIgnoreCase("customer")){
+            		%>
+            		<li><a href="javascript:void(0)"><span class="glyphicon glyphicon-user" ></span>&nbsp;<%= user %></a></li>
+            		<%
+            	}
+            	else if(userRole.equalsIgnoreCase("admin")){
+            		%>
+            		<li><a href="/Git_Punjabi_Fashion/jsp/admin/home.jsp"><span class="glyphicon glyphicon-user" ></span>&nbsp;<%= user %></a></li>
+            		<%
             	}
             %>
-            <%=user %>
-            </li>
+           	
+            
             
             <%
             	if(session.getAttribute("session_user") == null ||session.getAttribute("session_user").equals("") ){

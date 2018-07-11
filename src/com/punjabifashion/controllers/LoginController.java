@@ -48,11 +48,13 @@ public class LoginController extends HttpServlet {
 	    		  if(userRole.equals("customer")){
 	    			  System.out.println("user is recorded in DB");
 	    			  session.setAttribute("session_user", username);
+	    			  session.setAttribute("session_user_role", userRole);
 	    			  response.sendRedirect("/Git_Punjabi_Fashion/index.jsp");
 	    		  }
 	    		  else if(userRole.equals("admin")){
 	    			  System.out.println("user is recorded in DB as Admin");
 	    			  session.setAttribute("session_user", username);
+	    			  session.setAttribute("session_user_role", userRole);
 	    			  response.sendRedirect("/Git_Punjabi_Fashion/jsp/admin/home.jsp");
 	    		  }
 	    		  else{

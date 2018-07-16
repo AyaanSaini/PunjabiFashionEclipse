@@ -1,5 +1,7 @@
 package com.punjabifashion.service;
 
+import java.sql.SQLException;
+
 import com.punjabifashion.beans.User;
 import com.punjabifashion.dao.UserDAO;
 import com.punjabifashion.dao.UserDAOImpl;
@@ -8,7 +10,7 @@ import com.punjabifashion.dao.UserDAOImpl;
 public class UserServiceImpl implements UserService{
 	UserDAO userDAO = new UserDAOImpl();
 	@Override
-	public String isValidUser(String username, String password) {
+	public String isValidUser(String username, String password) throws SQLException {
 		
 		return userDAO.isValidUser(username,password);
 

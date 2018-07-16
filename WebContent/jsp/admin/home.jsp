@@ -8,6 +8,8 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ <script type="text/javascript" src="../../javascripts/addProduct.js"></script>
+
  <link rel="stylesheet" href="../../index.css">
  <link rel="stylesheet" href="../../css/admin/home.css">
  <link rel="stylesheet" href="../../css/admin/addproduct.css">
@@ -29,6 +31,7 @@
  		$("div.add-div").show("slow"); 	    
  	    $("div.edit-div").hide("slow");
  	    $("div.delete-div").hide("slow");
+ 	  
  	}
  	
  	function editProduct(){

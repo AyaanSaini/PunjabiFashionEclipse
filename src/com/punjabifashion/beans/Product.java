@@ -6,17 +6,17 @@ public class Product {
 	private int id;
 	private String code;
 	private String category;
-	private String subCategory;
+	private String fit;
 	private String name;
 	private String description;
-	private String mrp;
-	private String discount;
-	private int avgRating;
+	private Double mrp;
+	private Double discount;
+	private Double avgRating;
 	private int totalRating;
 	private String[] sizes;
-	private String[] colors;
-	private String[] genders;
-	private boolean stiched;
+	private String colors;
+	private String genders;
+	private boolean stitched;
 	private InputStream photo;
 	public int getId() {
 		return id;
@@ -36,11 +36,11 @@ public class Product {
 	public void setCategory(String category) {
 		this.category = category;
 	}
-	public String getSubCategory() {
-		return subCategory;
+	public String getFit() {
+		return fit;
 	}
-	public void setSubCategory(String subCategory) {
-		this.subCategory = subCategory;
+	public void setFit(String fit) {
+		this.fit = fit;
 	}
 	public String getName() {
 		return name;
@@ -54,22 +54,23 @@ public class Product {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public String getMrp() {
+	
+	public Double getMrp() {
 		return mrp;
 	}
-	public void setMrp(String mrp) {
+	public void setMrp(Double mrp) {
 		this.mrp = mrp;
 	}
-	public String getDiscount() {
+	public Double getDiscount() {
 		return discount;
 	}
-	public void setDiscount(String discount) {
+	public void setDiscount(Double discount) {
 		this.discount = discount;
 	}
-	public int getAvgRating() {
+	public Double getAvgRating() {
 		return avgRating;
 	}
-	public void setAvgRating(int avgRating) {
+	public void setAvgRating(Double avgRating) {
 		this.avgRating = avgRating;
 	}
 	public int getTotalRating() {
@@ -84,23 +85,23 @@ public class Product {
 	public void setSizes(String[] sizes) {
 		this.sizes = sizes;
 	}
-	public String[] getColors() {
+	public String getColors() {
 		return colors;
 	}
-	public void setColors(String[] colors) {
+	public void setColors(String colors) {
 		this.colors = colors;
 	}
-	public String[] getGenders() {
+	public String getGenders() {
 		return genders;
 	}
-	public void setGenders(String[] genders) {
+	public void setGenders(String genders) {
 		this.genders = genders;
 	}
-	public boolean isStiched() {
-		return stiched;
+	public boolean isStitched() {
+		return stitched;
 	}
-	public void setStiched(boolean stiched) {
-		this.stiched = stiched;
+	public void setStitched(boolean stitched) {
+		this.stitched = stitched;
 	}
 	public InputStream getPhoto() {
 		return photo;

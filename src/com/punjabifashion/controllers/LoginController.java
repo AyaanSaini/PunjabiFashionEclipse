@@ -2,6 +2,7 @@ package com.punjabifashion.controllers;
 
 import java.io.IOException;
 import java.net.URLEncoder;
+import java.sql.SQLException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -42,7 +43,13 @@ public class LoginController extends HttpServlet {
 	    	  }
 	    	  else{
 	    		  UserService userService = new UserServiceImpl();
-	    		  String userRole =  userService.isValidUser(username, pwd);
+	    		  String userRole = null;
+	    		  try {
+					userRole =  userService.isValidUser(username, pwd);
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 	    		  
 	    		  
 	    		  if(userRole.equals("customer")){

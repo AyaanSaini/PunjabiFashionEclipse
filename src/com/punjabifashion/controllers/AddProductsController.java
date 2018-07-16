@@ -19,7 +19,7 @@ import com.punjabifashion.validators.ProductValidation;
 
 @WebServlet("/AddProduct")
 @MultipartConfig(maxFileSize = 16177215)    // upload file's size up to 16MB
-public class AddProductsControllers extends HttpServlet {
+public class AddProductsController extends HttpServlet {
 
 	/**
 	 * 
@@ -31,21 +31,36 @@ public class AddProductsControllers extends HttpServlet {
 	ProductService productService;
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
-		session = request.getSession();
-		if(session.getAttribute("session_user_role").toString().equalsIgnoreCase("admin")){
+		try{
+			session = request.getSession();
+		}catch(Exception e){
+			message = "Session is null please login first";
+			response.sendRedirect("/Git_Punjabi_Fashion/error.jsp?error=" + URLEncoder.encode(message, "UTF-8"));
+		}
+		if(session.getAttribute("session_user_role") == null){
+			message = "User is not a admin please login first";
+			response.sendRedirect("/Git_Punjabi_Fashion/error.jsp?error=" + URLEncoder.encode(message, "UTF-8"));
+		}
+		else if(session.getAttribute("session_user_role").toString().equalsIgnoreCase("admin")){
 			Product product = null;
 			int res;
+			boolean stitched = false;
 			try{
 			product = new Product();
 			product.setName(request.getParameter("name"));
 			product.setDescription(request.getParameter("description"));
 			product.setCategory(request.getParameter("category"));
-			product.setSubCategory(request.getParameter("subCategory"));
-			product.setMrp(request.getParameter("price"));
-			product.setDiscount(request.getParameter("discount"));
-			product.setGenders(request.getParameterValues("gender"));
+			if(request.getParameter("stitched").equals("true"))
+				stitched = true;
+			else if(request.getParameter("stitched").equals("false"))
+				stitched = false;
+			product.setStitched(stitched);
+			product.setFit(request.getParameter("fit"));
+			product.setMrp(Double.parseDouble(request.getParameter("price")));
+			product.setDiscount(Double.parseDouble(request.getParameter("discount")));
+			product.setGenders(request.getParameter("gender"));
 			product.setSizes(request.getParameterValues("sizes"));
-			product.setColors(request.getParameterValues("colors"));
+			product.setColors(request.getParameter("colors"));
 			Part filePart = request.getPart("img[]");
 			System.out.println(filePart.getName());
             System.out.println(filePart.getSize());
@@ -59,7 +74,8 @@ public class AddProductsControllers extends HttpServlet {
 				if(product != null){
 					productValidation = new ProductValidation();
 					String validProduct = productValidation.isValidProduct(product);
-					if(validProduct.equals("fine")){
+					System.out.println("AddProductController:Product Validation = "+validProduct);
+					if(validProduct.equals("Fine")){
 						productService = new ProductServiceImpl();
 						res = productService.addProduct(product);
 						if(res == 1){
@@ -67,14 +83,19 @@ public class AddProductsControllers extends HttpServlet {
 							message = "Product Successfully Added";
 							response.sendRedirect("/Git_Punjabi_Fashion/jsp/admin/home.jsp?message=" + URLEncoder.encode(message, "UTF-8"));
 						}
+						else if(res == 1){
+							System.out.println("Product is Not Successfully Added with code"+res);
+							message = "Product Not Added Successfully, Contact Database Admin";
+							response.sendRedirect("/Git_Punjabi_Fashion/jsp/admin/home.jsp?error=" + URLEncoder.encode(message, "UTF-8"));
+						}
 						else{
 							System.out.println("Product is Not Successfully Added with code"+res);
-							message = "Product Not Added Successfully";
+							message = "Product Not Added Successfully,Contact System Admin";
 							response.sendRedirect("/Git_Punjabi_Fashion/jsp/admin/home.jsp?error=" + URLEncoder.encode(message, "UTF-8"));
 						}						
 					}else{
 						System.out.println("Product details are not proper"+validProduct);
-						message = "Product Not Added Successfully. Please provide proper product information for all fields";
+						message = "Product Not Added Successfully. Please provide "+validProduct+" field value properly";
 						response.sendRedirect("/Git_Punjabi_Fashion/jsp/admin/home.jsp?error=" + URLEncoder.encode(message, "UTF-8"));
 					}
 				}

@@ -13,10 +13,11 @@ public class UserDAOImpl implements UserDAO {
 	Connection con =  DBUtil.getConnection();
 	
 	@Override
-	public String isValidUser(String username, String password) {
+	public String isValidUser(String username, String password) throws SQLException {
 		// TODO Auto-generated method stub
 		String role = "noUser";
 		try{
+			con.setAutoCommit(false);
 			String query = "select * from user_table where username = ? AND password = ?";
 			PreparedStatement ps = con.prepareStatement(query);
 			ps.setString(1, username);
@@ -25,11 +26,15 @@ public class UserDAOImpl implements UserDAO {
 			if(rs.next()){
 				role = rs.getString("user_type");
 			}
+			con.commit();
 		}
 		catch(SQLException se){
 			System.out.println(se.getMessage());			
 		}catch(Exception e){
 			System.out.println(e.getMessage());			
+		}
+		finally {
+			con.close();
 		}
 		return role;
 	}

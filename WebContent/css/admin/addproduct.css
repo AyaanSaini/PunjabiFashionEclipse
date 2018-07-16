@@ -35,3 +35,34 @@
 	text-align: center;
 }
 
+.error{
+	font-size:16px;
+    color: red;
+}
+.message{
+	font-size:16px;
+	color: green
+}
+
+
+.women{
+	display: none;
+	
+}
+
+
+.fit-div{
+	display: none;
+	
+}
+.stitched-div{
+	display: none;
+	
+}
+.sizes-div{
+	display: none;
+	
+}
+.color-div{
+	display: block;
+}
